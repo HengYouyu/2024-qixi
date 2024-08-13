@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>七夕告白 - 安海龙致马蓉</title>
+    <link rel="stylesheet" href="./static/styles.css">
+</head>
+<body>
+    <header>
+        <h1>七夕情人节</h1>
+    </header>
+    <main>
+        <article>
+            <h2>亲爱的马蓉：</h2>
+            <p>今天是七夕节，这是一个象征着爱情与相守的日子。在这特别的一天里，我本想通过写信这种比较传统的方式，把我心底里的话告诉你。但你提醒了我，我可以专门为你写一个网页，所以连忙赶制了这个网页，显得可能有点粗糙，但希望你能够喜欢。</p>
+            <p>在遇见你之前，我一直以为自己是个不太懂得如何付出真心的人，以为爱情对我来说只是一种遥不可及。但自从遇见你，我发现我是可以去爱一个人的，愿意为了对方的幸福而努力，只为了让这段关系变得更加美好。</p>
+            <p>是你让我明白我可以去爱，可以关心他人。在我们相识的日子里，我发现自己可以和你从早聊到晚，分享生活的点滴，无论是快乐还是忧伤。这让我感到无比幸福，因为能有这样一个愿意倾听我的人，是多么难得。</p>
+            <p>记得刚开始聊天时，我们就可以聊很久。那时我意识到，原来我可以这样无拘无束地和一个人聊天，完全沉浸在彼此的世界里。那一刻，我明白了什么是真正的交流和理解。</p>
+            <p>在未来的日子里，我希望我们可以一起成长，一起面对生活中的挑战，去做最真实的自己，坦然地接受和包容对方的一切优缺点。我想说，过去你的人生我没有参与，但未来我希望陪在你身边，支持你，爱护你，为你开心，为你难过。</p>
+            <p>如果你也愿意，让我们携手共度每一个明天，共同面对生活的风风雨雨。我相信，只要我们在一起，就没有什么是我们克服不了的。</p>
+            <p>请让我成为那个陪伴你一生的人，好吗？</p>
+            <p align="right">爱你的，安海龙&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+            <p align="right">2024年7月7日&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+        </article>
+    </main>
+    <footer>
+        <p>愿天下有情人终成眷属。</p>
+    </footer>
+    <!-- 添加背景音乐 -->
+    <div class="music-player">
+    <audio src="./static/遇见.mp3" autoplay loop controls></audio>
+    </div>
+    <!-- 添加小红心飘过的效果 -->
+    <div id="falling-hearts"></div>
+</body>
+<script>
+    // 创建小红心
+    function createHeart() {
+        const heart = document.createElement('img');
+        heart.src = './static/heart.png'; // 替换为你的图标文件
+        heart.alt = 'Heart';
+        heart.classList.add('falling-heart');
+
+        // 设置随机位置
+        const randomLeft = Math.random() * (window.innerWidth - 20);
+        heart.style.left = `${randomLeft}px`;
+
+        // 设置随机动画延迟
+        const delay = Math.random() * 5; // 0 到 5 秒之间的随机数
+        heart.style.animationDelay = `${delay}s`;
+
+        return heart;
+    }
+
+    // 生成多个小红心
+    function generateHearts(count) {
+        const heartsContainer = document.getElementById('falling-hearts');
+        for (let i = 0; i < count; i++) {
+            heartsContainer.appendChild(createHeart());
+        }
+    }
+
+    // 初始化生成50个小红心
+    window.addEventListener('load', () => {
+        generateHearts(50);
+    });
+</script>
+</html>
